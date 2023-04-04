@@ -1,6 +1,15 @@
 const game = new Game()
 const player = new Player()
 
+const startBtn = document.getElementById('start-button')
+const startScreen = document.getElementById('start-screen')
+const gameScreen = document.getElementById('game-screen')
+
+startBtn.addEventListener('click', function() {
+	startScreen.style.display = 'none'
+	gameScreen.style.display = 'block'
+})
+
 // Load game assets
 function preload() {
 	game.preload()
@@ -22,8 +31,8 @@ function windowResized() {
 
 //TIMER
 const time = document.querySelector('h2')
-const start = document.querySelector('h1')
-let timeSecond = 5
+const start = document.querySelector('button')
+let timeSecond = 30
 
 startCleaning()
 
@@ -50,6 +59,7 @@ function startCleaning() {
 			}
 		}, 1000)
 		displayTime(timeSecond)
+		game.gameStarted = true
 	})
 }
 

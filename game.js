@@ -2,12 +2,14 @@ class Game {
     constructor() {
         this.background = new Background()
         this.player = new Player()
-        this.item = new Item()
-        this.backgroundImages
         this.playerImage
         this.garbage
         this.plasticBag
         this.mouse
+        this.backgroundImages
+        this.items = []
+        this.gameStarted = false
+        this.gameEnded = true
     }
 
     preload() {
@@ -24,7 +26,23 @@ class Game {
         //clear()
         this.background.draw()
         this.player.draw()
-        this.item.draw()
+
+if (this.gameStarted) {
+    if (frameCount % 30 === 0) {
+        this.items.push(new Item(this.garbage))
+    }
+    if (frameCount % 40 === 0) {
+        this.items.push(new Item(this.plasticBag))
+    }
+    if (frameCount % 50 === 0) {
+        this.items.push(new Item(this.mouse))
+    }
+    
+    this.items.forEach(item => {
+        item.draw()
+    })
+} 
+        
     }
 
 }

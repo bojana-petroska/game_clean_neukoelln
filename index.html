@@ -10,17 +10,25 @@
     <title>Clean Neukölln</title>
 </head>
 <body>
-    <div class="start-cleaning">
-        <button>Start cleaning</button>
+    <div id="start-screen">
+        <h1>Hi</h1>
+        <button id="start-button">Start game here</button>
+        <!-- <img src="./hermannplatz_neukocc88lln_berlin_herbst_menschen_handy_essen_markt_bvg_kerstin-musl_12-680x454.jpg" alt="bbb"> -->
     </div>
-        <p id="score">Score: <span>0</span></p>
+    <div id="game-screen">
+        <div class="start-cleaning">
+            <button>Start cleaning</button>
+        </div>
+        <div>
+            <p id="score">Score: <span>0</span></p>
+        </div>
         <section>
             <div class="shadow">
-                <h2>00:00</h2>
+                <h2>00:30</h2>
             </div>
         </section>
-        
-        <script src="items.js"></script>
+    </div>
+        <script src="item.js"></script>
         <script src="player.js"></script>
         <script src="background.js"></script>
         <script src="game.js"></script>

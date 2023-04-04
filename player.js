@@ -1,7 +1,7 @@
 class Player {
     constructor() {
-        this.width = 60
-        this.height = 100
+        this.width = 120
+        this.height = 140
         this.x = 0
         this.y = 400
     }
@@ -13,7 +13,7 @@ class Player {
             if (this.x > 0) this.moveLeft()
         }
         if (keyIsDown(RIGHT_ARROW)) {
-			if (this.x < 600 - this.width) this.moveRight()
+			if (this.x < windowWidth - this.width) this.moveRight()
 		}
 
 		if (keyIsDown(UP_ARROW)) {
@@ -21,23 +21,37 @@ class Player {
 		}
 
 		if (keyIsDown(DOWN_ARROW)) {
-			if (this.y < height - this.height) this.moveDown()
+			if (this.y < windowHeight - this.height) this.moveDown()
 		}
     }
 
     moveUp() {
-        this.y -= 10
+        this.y -= 50
+        game.items.forEach(item => {
+            item.collision()
+        })
     }
 
     moveDown() {
-        this.y += 10
+        this.y += 50
+        game.items.forEach(item => {
+            item.collision()
+        })
     }
 
     moveLeft() {
-        this.x -= 10
+        this.x -= 50
+        game.items.forEach(item => {
+            item.collision()
+        })
     }
 
     moveRight() {
-        this.x += 10
+        this.x += 50
+        game.items.forEach(item => {
+            item.collision()
+        })
     }
+
+    
 }
