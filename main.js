@@ -5,9 +5,12 @@ const startBtn = document.getElementById('start-button')
 const startScreen = document.getElementById('start-screen')
 const gameScreen = document.getElementById('game-screen')
 
-startBtn.addEventListener('click', function() {
+let buttonStartsGameScreen = false
+
+startBtn.addEventListener('click', () => {
 	startScreen.style.display = 'none'
 	gameScreen.style.display = 'block'
+	buttonStartsGameScreen = true
 })
 
 // Load game assets
@@ -21,8 +24,9 @@ function setup() {
 }
 
 function draw() {
-	background('#FF8C00')
-	game.draw()
+	if (buttonStartsGameScreen) {
+		game.draw()
+	}
 }
 
 function windowResized() {
@@ -31,8 +35,8 @@ function windowResized() {
 
 //TIMER
 const time = document.querySelector('h2')
-const start = document.querySelector('button')
-let timeSecond = 30
+const start = document.querySelector('.start-cleaning')
+let timeSecond = 15
 
 startCleaning()
 
@@ -48,7 +52,7 @@ function endTime() {
 }
 
 function startCleaning() {
-	const startCleaning = document.querySelector('button');
+	const startCleaning = document.querySelector('.start-cleaning button');
 	startCleaning.addEventListener('click', function() {
 		const countDown = setInterval(() => {
 			timeSecond--;
@@ -56,10 +60,38 @@ function startCleaning() {
 			if(timeSecond <= 0 || timeSecond < 1) {
 				endTime()
 				clearInterval(countDown)
+				game.gameStarted = false;
 			}
 		}, 1000)
 		displayTime(timeSecond)
 		game.gameStarted = true
 	})
 }
+
+let count = 0;
+
+function checkCollision() {
+	count++
+	document.querySelector('.score').textContent = `${count}`
+	if (count >= 10) {
+		youWon();
+		game.gameStarted = false;
+	}
+}
+const winPhoto = document.getElementById('win-photo');
+const wonText = document.querySelector('.won-text')
+
+function youWon() {
+	//winPhoto.classList.add('win-photo');
+	winPhoto.style.display = 'block';
+	wonText.style.display = 'block'
+
+	setInterval(() => {
+		wonText.style.visibility = wonText.style.visibility === 'hidden' ? 'visible' : 'hidden';
+	  }, 500);
+	  start.style.display = 'none'
+	}
+
+
+
 

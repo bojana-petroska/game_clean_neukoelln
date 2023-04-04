@@ -22,6 +22,7 @@ class Game {
         this.mouse = loadImage('./mouse.png')
     }
 
+
     draw() {
         //clear()
         this.background.draw()
@@ -41,8 +42,6 @@ if (this.gameStarted) {
     this.items.forEach(item => {
         item.draw()
     })
-} 
-        
+}         
     }
-
 }

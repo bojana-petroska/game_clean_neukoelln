@@ -4,7 +4,7 @@
     overflow: hidden;
     box-sizing: border-box;
     font-family:Cambria, Cochin, G Times, 'Times New Roman', serif;
-    background-color: #FF8C00;
+    background-color: #eed3e8;
     /* background-image: url(./Header-JH-Station-Neukoelln.jpg);
     background-position: center;
     background-size: 100%;
@@ -13,10 +13,15 @@
 
 div, p {
     display: flex;
+
+
+
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
-button, h2, span, #score{
+button, span, #score{
     background-color: blueviolet;
     font-size: 2rem;
 }
@@ -25,8 +30,32 @@ button {
     cursor: pointer
 }
 
-/* .shadow {
-    -webkit-border-radius: 0% 0% 100% 100% / 0% 0% 8px 8px;
-    -webkit-box-shadow: rgba(0, 0, 0,.30) 0 2px 3px;
-    } */
+#start-screen {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
 
+div .start-cleaning, h2 {
+    font-size: 3rem;
+    color: crimson;
+}
+
+/* canvas {
+    background-color: blueviolet;
+} */
+
+.win-photo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    display: none;
+  }
+
+  .won-text {
+    font-size: 4rem;
+    align-items: center;
+  }

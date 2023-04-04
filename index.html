@@ -15,19 +15,24 @@
         <button id="start-button">Start game here</button>
         <!-- <img src="./hermannplatz_neukocc88lln_berlin_herbst_menschen_handy_essen_markt_bvg_kerstin-musl_12-680x454.jpg" alt="bbb"> -->
     </div>
-    <div id="game-screen">
+    <div id="game-screen" style="display: none">
         <div class="start-cleaning">
             <button>Start cleaning</button>
         </div>
         <div>
-            <p id="score">Score: <span>0</span></p>
+            <p id="score">Score: <span class="score">0</span></p>
         </div>
         <section>
             <div class="shadow">
-                <h2>00:30</h2>
+                <h2>00:15</h2>
             </div>
         </section>
     </div>
+    <div>
+        <img id="win-photo" src="./kebab.png" alt="kebab" style="display: none">
+    <p class="won-text" style="display:none">You won a Döner!</p>
+    </div>
+
         <script src="item.js"></script>
         <script src="player.js"></script>
         <script src="background.js"></script>

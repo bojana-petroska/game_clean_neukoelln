@@ -6,23 +6,10 @@ class Item {
         this.width = 70;
         this.height = 70;
         this.items = []
-        this.count = 0
     }
 
     draw() {
-
-        //const randomIndex = Math.floor(Math.random() * items.length)
-
-        //const randomItem = items[randomIndex]
-
-
         image(this.image, this.x, this.y, this.width, this.height)
-        // image(game.garbage, 100, 100, 50, 50)
-
-        // image(game.plasticBag, 50, 50, 50, 50)
-
-        // image(game.mouse, 150, 150, 40, 40)
-
     }    
 
     collision() {
@@ -32,13 +19,12 @@ class Item {
         if (Math.abs(distanceX) < (game.player.width/2 + this.width/2) && Math.abs(distanceY) < (game.player.height/2 + this.height/2)) {
             this.x = random(width);
             this.y = random(height);
+            checkCollision()
             return true;
         } else {
             return false;
         }
-    }
-        
-        
+    }        
 }
 
 
