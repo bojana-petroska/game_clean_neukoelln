@@ -6,6 +6,7 @@ class Game {
         this.garbage
         this.plasticBag
         this.mouse
+        this.sun
         this.backgroundImages
         this.items = []
         this.gameStarted = false
@@ -20,6 +21,7 @@ class Game {
         this.garbage = loadImage('./smiley_poop.png')
         this.plasticBag = loadImage('./plastic_bag.png')
         this.mouse = loadImage('./mouse.png')
+        this.sun = loadImage('./sun.png')
     }
 
 
@@ -37,6 +39,9 @@ if (this.gameStarted) {
     }
     if (frameCount % 50 === 0) {
         this.items.push(new Item(this.mouse))
+    }
+    if (frameCount % 150 === 0) {
+        this.items.push(new Item(this.sun))
     }
     
     this.items.forEach(item => {
