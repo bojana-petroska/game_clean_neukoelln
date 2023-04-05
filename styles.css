@@ -11,23 +11,42 @@
     background-repeat: no-repeat; */
 }
 
-div, p {
+div {
     display: flex;
-
-
-
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    margin: 10px;
 }
 
-button, span, #score{
-    background-color: blueviolet;
-    font-size: 2rem;
+#start-button{
+    cursor: pointer;
+    margin: 15px;
+    border:rgb(133, 108, 152);
+    font-size: 20px;
+    font-weight: bold;
 }
 
-button {
-    cursor: pointer
+#start-button:hover {
+    color: white;
+    background-color: rgb(216, 198, 231);
+    font-size: 1.4rem;
+    padding: 2px;
+    border-radius: 6px;
+}
+
+.start-cleaning {
+    cursor: pointer;
+    border: none;
+    font-size: 2.4rem;
+}
+
+.start-cleaning:hover {
+    color: white;
+    background-color: rgb(191, 172, 207);
+    padding: 2px;
+    border-radius: 6px;
+    font-size: 2.6rem;
 }
 
 #start-screen {
@@ -37,16 +56,11 @@ button {
     align-items: center;
 }
 
-div .start-cleaning, h2 {
-    font-size: 3rem;
-    color: crimson;
-}
-
 /* canvas {
     background-color: blueviolet;
 } */
 
-.win-photo {
+/* .win-photo {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -58,4 +72,34 @@ div .start-cleaning, h2 {
   .won-text {
     font-size: 4rem;
     align-items: center;
+  } */
+
+  h1 {
+    margin: 10px;
+  }
+
+  h3 {
+    text-align: center;
+  }
+
+  #arrow-keys {
+    margin: 10px;
+    width: 120px;
+  }
+
+ body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #loser-photo, .win-photo {
+    width: 800px;
+    margin: 70px;
+  }
+
+  .loser-text, .won-text {
+    font-size: 4rem;
+    color: rgb(16, 92, 92);
   }

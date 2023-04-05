@@ -11,28 +11,36 @@
 </head>
 <body>
     <div id="start-screen">
-        <h1>Hi</h1>
-        <button id="start-button">Start game here</button>
-        <!-- <img src="./hermannplatz_neukocc88lln_berlin_herbst_menschen_handy_essen_markt_bvg_kerstin-musl_12-680x454.jpg" alt="bbb"> -->
+        <h1>Welcome in Neukölln!</h1>
+        <h3>we are gonna try together to clean this lovely neighborhood (if possible :/ ) <br> if you have ever walked on the cool streets of Neukölln, you know what you have to do ; ) <br> now dive right in and try to clean as much as possible because the punishment is very cruel : ( <br> but the reward very delicious : )</h3>
+        <button id="start-button">start the game here</button>
+        <img src="./hermannplatz_neukocc88lln_berlin_herbst_menschen_handy_essen_markt_bvg_kerstin-musl_12-680x454.jpg" alt="bbb" width="800" height="600">
+        <p>use</p>
+        <img id='arrow-keys' src="./arrow-keys.png" alt="arrow-keys">
+        <p>to move</p>
     </div>
     <div id="game-screen" style="display: none">
-        <div class="start-cleaning">
-            <button>Start cleaning</button>
+        <audio id="my_audio" src="./The Addams Family (TV Intro-Theme) - MP3 Klingelton.mp3" type="audio/mpeg"></audio>
+        <div>
+            <button class="start-cleaning">start cleaning</button>
         </div>
         <div>
             <p id="score">Score: <span class="score">0</span></p>
         </div>
         <section>
             <div class="shadow">
-                <h2>00:15</h2>
+                <h2>00:05</h2>
             </div>
         </section>
     </div>
     <div>
         <img id="win-photo" src="./kebab.png" alt="kebab" style="display: none">
-    <p class="won-text" style="display:none">You won a Döner!</p>
+    <p class="won-text" style="display: none">You won a Döner!</p>
     </div>
-
+    <div>
+        <img id="loser-photo" src="./anmeldung.jpg" alt="anmeldung" style="display: none">
+        <p class="loser-text" style="display: none">You just lost your Anmeldung ; (((</p>
+    </div>
         <script src="item.js"></script>
         <script src="player.js"></script>
         <script src="background.js"></script>

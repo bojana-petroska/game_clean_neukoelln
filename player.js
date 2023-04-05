@@ -3,7 +3,7 @@ class Player {
         this.width = 120
         this.height = 140
         this.x = 0
-        this.y = 400
+        this.y = 450
     }
 
     draw() {
@@ -13,7 +13,7 @@ class Player {
             if (this.x > 0) this.moveLeft()
         }
         if (keyIsDown(RIGHT_ARROW)) {
-			if (this.x < windowWidth - this.width) this.moveRight()
+			if (this.x < 780 - this.width) this.moveRight()
 		}
 
 		if (keyIsDown(UP_ARROW)) {
@@ -21,7 +21,7 @@ class Player {
 		}
 
 		if (keyIsDown(DOWN_ARROW)) {
-			if (this.y < windowHeight - this.height) this.moveDown()
+			if (this.y < 580 - this.height) this.moveDown()
 		}
     }
 
