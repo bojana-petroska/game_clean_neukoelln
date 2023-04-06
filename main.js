@@ -5,9 +5,12 @@ const audio = document.getElementById("my_audio");
 	
 const startBtn = document.getElementById('start-button')
 const startCleaningGame = document.querySelector('.start-cleaning')
+const tryAgainBtn = document.querySelector('.try-again')
+const tryAgainGame = document.querySelector('.try-again')
 const startScreen = document.getElementById('start-screen')
 const gameScreen = document.getElementById('game-screen')
 
+tryAgainBtn.style.display = 'none'
 
 //make the score button show up only when the game is started
 let scoreHidden = document.querySelector('#score');
@@ -15,19 +18,24 @@ scoreHidden.style.display = 'none'
 
 //change the look when the game starts
 startCleaningGame.addEventListener('click', function() {
-		audio.play();
-		document.querySelector('.start-cleaning').innerHTML = ' ';
-		document.querySelector('#rules').innerHTML = ' '
-		scoreHidden.style.display = 'block'
-	})
-
+	audio.play();
+	document.querySelector('.start-cleaning').innerHTML = ' ';
+	document.querySelector('#rules').innerHTML = ' '
+	scoreHidden.style.display = 'block'
+})
+	
 startBtn.addEventListener('click', () => {
 	startScreen.style.display = 'none'
 	gameScreen.style.display = 'block'
+	tryAgainBtn.style.display = 'none'
 })
-
+	
 startCleaningGame.addEventListener('click', function() {
 	game.gameStarted = true
+})
+				
+tryAgainGame.addEventListener('click', function() {
+	window.location.reload()
 })
 
 // Load game assets
@@ -59,11 +67,6 @@ function displayTime(second) {
 	time.innerHTML = `${min<10 ? '0' : ''}${min}:${sec<10 ? '0' : ''}${sec}`
 }
 
-// function endTime() {
-// 	time.innerHTML = 'Time Out'
-// 	start.innerHTML = 'Oops you didn\'t clean Neukölln' 
-// }
-
 let count = 0;
 
 //play the game, check for collisions and count the score
@@ -80,17 +83,14 @@ function startCleaning() {
 				} else if (count < 150 && game.gameStarted === true) {
 					youLost()
 					game.gameStarted = false;
+					audio.pause();
 				} 
-				//endTime()
 				clearInterval(countDown)
-				//game.gameStarted = false;
 			}
 		}, 1000)
 		displayTime(timeSecond)
-		//game.gameStarted = true
 	})
 }
-
 
 function checkCollision() {
 	if (game.gameStarted) {
@@ -98,7 +98,6 @@ function checkCollision() {
 		document.querySelector('.score').textContent = `${count}`
 	}
 }
-
 
 //winning & losing logic with intervals
 const winPhoto = document.getElementById('win-photo');
@@ -130,7 +129,9 @@ function youLost() {
 
 	gameScreen.style.display = 'none'
 	document.querySelector('#defaultCanvas0').style.display = 'none'
+	tryAgainBtn.style.display = 'block'
 }
+
 
 
 
