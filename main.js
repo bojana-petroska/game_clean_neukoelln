@@ -2,19 +2,23 @@ const game = new Game()
 const player = new Player()
 
 const audio = document.getElementById("my_audio");
-
-
-// window.onload = function() {
-	//     document.getElementById("my_audio").play();
-	// }
 	
 const startBtn = document.getElementById('start-button')
 const startCleaningGame = document.querySelector('.start-cleaning')
 const startScreen = document.getElementById('start-screen')
 const gameScreen = document.getElementById('game-screen')
-	
+
+
+//make the score button show up only when the game is started
+let scoreHidden = document.querySelector('#score');
+scoreHidden.style.display = 'none'
+
+//change the look when the game starts
 startCleaningGame.addEventListener('click', function() {
-		audio.play()
+		audio.play();
+		document.querySelector('.start-cleaning').innerHTML = ' ';
+		document.querySelector('#rules').innerHTML = ' '
+		scoreHidden.style.display = 'block'
 	})
 
 startBtn.addEventListener('click', () => {
@@ -42,14 +46,10 @@ function draw() {
 	}
 }
 
-// function windowResized() {
-// 	resizeCanvas(windowWidth, windowHeight);
-//   }
-
-//TIMER
+//set the timer/countdown
 const time = document.querySelector('h2')
 const start = document.querySelector('.start-cleaning')
-let timeSecond = 30
+let timeSecond = 5
 
 startCleaning()
 
@@ -59,13 +59,14 @@ function displayTime(second) {
 	time.innerHTML = `${min<10 ? '0' : ''}${min}:${sec<10 ? '0' : ''}${sec}`
 }
 
-function endTime() {
-	time.innerHTML = 'Time Out'
-	start.innerHTML = 'Oops you didn\'t clean Neukölln' 
-}
+// function endTime() {
+// 	time.innerHTML = 'Time Out'
+// 	start.innerHTML = 'Oops you didn\'t clean Neukölln' 
+// }
 
 let count = 0;
 
+//play the game, check for collisions and count the score
 function startCleaning() {
 	const startCleaning = document.querySelector('.start-cleaning');
 	startCleaning.addEventListener('click', function() {
@@ -73,10 +74,10 @@ function startCleaning() {
 			timeSecond--;
 			displayTime(timeSecond);
 			if(timeSecond <= 0) {
-				if (count >= 80 && game.gameStarted === true) {
+				if (count >= 2 && game.gameStarted === true) {
 					youWon();
 					game.gameStarted = false;
-				} else if (count < 80 && game.gameStarted === true) {
+				} else if (count < 2 && game.gameStarted === true) {
 					youLost()
 					game.gameStarted = false;
 				} 
@@ -98,6 +99,8 @@ function checkCollision() {
 	}
 }
 
+
+//winning & losing logic
 const winPhoto = document.getElementById('win-photo');
 const wonText = document.querySelector('.won-text')
 

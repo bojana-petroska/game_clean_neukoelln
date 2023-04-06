@@ -23,9 +23,10 @@
         <audio id="my_audio" src="./The Addams Family (TV Intro-Theme) - MP3 Klingelton.mp3" type="audio/mpeg" loop="loop"></audio>
         <div>
             <button class="start-cleaning">start cleaning</button>
+            <p id="rules">clean 5 items in a sec and win</p>
         </div>
         <div>
-            <p id="score">Score: <span class="score">0</span></p>
+            <p id="score" style="font-size: 2.5rem">Score: <span class="score">0</span></p>
         </div>
         <section>
             <div class="shadow">
@@ -35,12 +36,15 @@
     </div>
     <div>
         <img id="win-photo" src="./kebab.png" alt="kebab" style="display: none">
-    <p class="won-text" style="display: none">You won a Döner!</p>
+    <p class="won-text" style="display: none">You just won a Döner! <br><br> <span style="font-size: 2rem" class="won-text"> but Neukölln is still not cleaned ; (</span> </p>
     </div>
     <div>
         <img id="loser-photo" src="./anmeldung.jpg" alt="anmeldung" style="display: none">
         <p class="loser-text" style="display: none">You just lost your Anmeldung ; (((</p>
     </div>
+    <!-- <div>
+        <button class="try-again">try again</button>
+    </div> -->
         <script src="item.js"></script>
         <script src="player.js"></script>
         <script src="background.js"></script>

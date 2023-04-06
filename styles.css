@@ -36,10 +36,11 @@ div {
 }
 
 .start-cleaning {
-    margin-top: 90px;
+    margin-top: 70px;
     cursor: pointer;
     border: none;
     font-size: 4rem;
+    outline: none;
 }
 
 .start-cleaning:hover {
@@ -103,4 +104,9 @@ div {
   .loser-text, .won-text {
     font-size: 4rem;
     color: rgb(16, 92, 92);
+    text-align: center;
+  }
+
+  #rules {
+    font-size: 1.5rem;
   }

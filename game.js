@@ -26,7 +26,6 @@ class Game {
 
 
     draw() {
-        //clear()
         this.background.draw()
         this.player.draw()
 
