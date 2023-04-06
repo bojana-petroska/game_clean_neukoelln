@@ -100,7 +100,7 @@ function checkCollision() {
 }
 
 
-//winning & losing logic
+//winning & losing logic with intervals
 const winPhoto = document.getElementById('win-photo');
 const wonText = document.querySelector('.won-text')
 
