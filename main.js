@@ -49,7 +49,7 @@ function draw() {
 //set the timer/countdown
 const time = document.querySelector('h2')
 const start = document.querySelector('.start-cleaning')
-let timeSecond = 5
+let timeSecond = 30
 
 startCleaning()
 
@@ -74,10 +74,10 @@ function startCleaning() {
 			timeSecond--;
 			displayTime(timeSecond);
 			if(timeSecond <= 0) {
-				if (count >= 2 && game.gameStarted === true) {
+				if (count >= 150 && game.gameStarted === true) {
 					youWon();
 					game.gameStarted = false;
-				} else if (count < 2 && game.gameStarted === true) {
+				} else if (count < 150 && game.gameStarted === true) {
 					youLost()
 					game.gameStarted = false;
 				} 
